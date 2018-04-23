@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# one:
+#   name: MyString
+#   email: MyString
+#
+# two:
+#   name: MyString
+#   email: MyString
+
+ren:
+  name: Ren Aganon
+  email: ren@example.com
+  # creates the valid password digest for the test user.
+  password_digest: <%= User.digest('password') %>

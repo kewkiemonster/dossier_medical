@@ -1,0 +1,15 @@
+<footer class="footer">
+  <small>
+    <%= form_tag(users_path, :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search" %>
+        <%= submit_tag "Search", :name => nil, class: "btn btn-default" %>
+    <% end %>
+  </small>
+
+    <ul>
+      <li><%= link_to 'Back', root_path %></li>
+      <li><%= link_to "Show Patients", show_path %></li>
+      <li><%= link_to "Log out", logout_path, method: :delete %></li>
+    </ul>
+
+</footer>

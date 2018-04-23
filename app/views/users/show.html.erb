@@ -1,0 +1,27 @@
+
+<% provide(:title, @user.name) %>
+<!-- places the logo on the side -->
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+         <!-- Gravatar -->
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+</div>
+
+<!-- <div class="col-md-8">
+  <% if @user.patient.any? %>
+    <h3>Patient Records (<%= @user.patients.count %>)</h3>
+    <ol class="patients">
+      <%= render @patients %>
+    </ol>
+    <%= will_paginate @patients %>
+  <% end %>
+</div> -->
+
+<!-- This displays the user's name and email through the instance variable of @users  -->
+<%= @user.name %>, <%= @user.email %>

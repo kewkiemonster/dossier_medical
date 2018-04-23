@@ -1,0 +1,52 @@
+<%= form_with(model: patient, local: true) do |form| %>
+  <% if patient.errors.any? %>
+    <div id="error_explanation">
+
+      <h2><%= pluralize(patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
+
+      <ul>
+      <% patient.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+      <%= form.label :name %>
+      <%= form.text_field :name, id: :patient_name, class: 'form-control' %>
+
+
+        <%= form.label :birthdate %>
+        <%= form.date_select :birthdate, :start_year=>1900, id: :patient_birthdate %>
+
+      <%= form.label :contact %>
+      <%= form.text_field :contact, id: :patient_contact, class: 'form-control' %>
+
+      <%= form.label :address %>
+      <%= form.text_field :address, id: :patient_address, class: 'form-control' %>
+
+      <%= form.label :injury %>
+      <%= form.text_field :injury, id: :patient_injury %>
+
+      <%= form.label :infection %>
+      <%= form.text_field :infection, id: :patient_infection %>
+
+      <%= form.label :specialobservation %>
+      <%= form.text_field :specialobservation, id: :patient_specialobservation %>
+
+      <%= form.label :appointment %>
+      <%= form.date_select :appointment, id: :patient_appointment %>
+
+      <%= form.label :time %>
+      <%= form.time_select :time, id: :patient_time %>
+
+      <div class="actions">
+        <%= form.submit class: "btn btn-primary"%>
+      </div>
+    </div>
+</div>
+
+<% end %>
